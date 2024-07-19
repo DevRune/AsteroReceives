@@ -1,0 +1,10 @@
+servername: "lobby"
+database:
+  host: "localhost"
+  port: 3306
+  database: "jouw_database_naam"
+  username: "gebruikersnaam"
+  password: "wachtwoord"
+receive_commands:
+  say_hello: "say hello %player%"
+  say_hi: "say hi %player%"

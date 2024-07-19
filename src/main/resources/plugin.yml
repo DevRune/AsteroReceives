@@ -1,0 +1,14 @@
+name: AsteroReceives
+version: '${project.version}'
+main: nl.infinityastro.asteroreceives.AsteroReceives
+api-version: '1.20'
+commands:
+  receives:
+    description: Beheer de receives van spelers.
+    usage: /<command> <add|view> [speler]
+    permission: receives.use
+
+permissions:
+  receives.use:
+    description: Stelt spelers in staat om de receives te beheren.
+    default: op

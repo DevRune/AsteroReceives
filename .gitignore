@@ -1,0 +1,88 @@
+# Java class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+*.ctxt.*
+*.jad
+*.jar
+*.java
+*.javadoc
+
+# Eclipse
+.project
+.classpath
+.settings/
+*.launch
+*.prefs
+*.buildpath
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+*.idea/
+*.iml
+*.iws
+*.ipr
+*.jps
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+*.nb-gradle
+
+# Maven
+target/
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Package distribution files
+*.tar.gz
+*.zip
+*.7z
+
+# Other IDEs
+*.project
+*.classpath
+
+# Files from various IDEs
+*.suo
+*.sln
+*.user
+*.userosscache
+*.suo
+*.sln
+*.swp
+*.swo
+*.swn
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Local build output
+build/
+out/
+*.class
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
