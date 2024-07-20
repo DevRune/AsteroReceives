@@ -5,6 +5,7 @@ database:
   database: "jouw_database_naam"
   username: "gebruikersnaam"
   password: "wachtwoord"
+  type: "mysql"
 receive_commands:
   say_hello: "say hello %player%"
   say_hi: "say hi %player%"

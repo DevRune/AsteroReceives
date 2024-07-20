@@ -58,8 +58,9 @@ public final class AsteroReceives extends JavaPlugin {
         String database = getConfig().getString("database.database");
         String username = getConfig().getString("database.username");
         String password = getConfig().getString("database.password");
+        String type = getConfig().getString("database.type");
 
-        String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + database;
+        String jdbcUrl = "jdbc:" + type + "://" + host + ":" + port + "/" + database;
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
