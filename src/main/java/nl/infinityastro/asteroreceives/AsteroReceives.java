@@ -23,11 +23,7 @@ public final class AsteroReceives extends JavaPlugin {
         saveDefaultConfig(); // Opslaan van de standaard config.yml indien deze niet bestaat
 
         // Database initialisatie
-        if (!setupDatabase()) {
-            getLogger().severe("Kan geen verbinding maken met de database. Plugin wordt uitgeschakeld.");
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
+        setupDatabase();
 
         // Commando initialisatie
         getCommand("receives").setExecutor(new ReceivesCommand(this, databaseManager));
@@ -52,7 +48,7 @@ public final class AsteroReceives extends JavaPlugin {
         getLogger().info(getDescription().getName() + " v" + getDescription().getVersion() + " is uitgeschakeld.");
     }
 
-    private boolean setupDatabase() {
+    private void setupDatabase() {
         String host = getConfig().getString("database.host");
         int port = getConfig().getInt("database.port");
         String database = getConfig().getString("database.database");
@@ -61,15 +57,8 @@ public final class AsteroReceives extends JavaPlugin {
         String type = getConfig().getString("database.type");
 
         String jdbcUrl = "jdbc:" + type + "://" + host + ":" + port + "/" + database;
-
-        try {
-            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-            databaseManager = new DatabaseManager(connection);
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+        databaseManager = new DatabaseManager(jdbcUrl, username, password, type);
+        return;
     }
 
     public DatabaseManager getDatabaseManager() {
